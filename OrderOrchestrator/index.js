@@ -1,28 +1,16 @@
-﻿/*
- * This function is not intended to be invoked directly. Instead it will be
- * triggered by an HTTP starter function.
- * 
- * Before running this sample, please:
- * - create a Durable activity function (default name is "Hello")
- * - create a Durable HTTP starter function
- * - run 'npm install durable-functions' from the wwwroot folder of your 
- *    function app in Kudu
- */
+﻿const df = require("durable-functions");
+const admin = require('firebase-admin');
 
-const df = require("durable-functions");
+var serviceAccount = require("/home/charroch/aaaa-279a7-firebase-adminsdk-zef6e-6fbefd8c6b.json");
+
+const app = admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+});
 
 module.exports = df.orchestrator(function* (context) {
     const outputs = [];
-
-    console.log("hello world")
-
-    // write to file is a no no
-   
-    // Replace "Hello" with the name of your Durable Activity Function.
     outputs.push(yield context.df.callActivity("Hello", "Tokyo"));
     outputs.push(yield context.df.callActivity("Hello", "Seattle"));
     outputs.push(yield context.df.callActivity("Hello", "London"));
-
-    // returns ["Hello Tokyo!", "Hello Seattle!", "Hello London!"]
     return outputs;
 });
