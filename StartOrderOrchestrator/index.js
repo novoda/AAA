@@ -2,7 +2,9 @@
 
 module.exports = async function (context, req) {
     const client = df.getClient(context);
-    const instanceId = await client.startNew(req.params.functionName, undefined, req.body);
+    const regId = req.params.registrationId
+
+    const instanceId = await client.startNew("orderOrchestrator", undefined, {regId});
 
     context.log(`Started orchestration with ID = '${instanceId}'.`);
 
