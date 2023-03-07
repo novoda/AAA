@@ -15,8 +15,8 @@ To run this tutorial:
 
 # For the Android App
 
-    The Android app is located in the DurableTestApp folder.
-    This app needs to be run in a emulator in the same machine as the Azure Functions is running because it is
+The Android app is located in the DurableTestApp folder.
+This app needs to be run in a emulator in the same machine as the Azure Functions is running because it is
 pointing twards the localhost (10.0.2.2) in Android for an emulator from Android Studio (other emulators may use a diferent address to access the localhost)
 
 1. Install Android Studio
