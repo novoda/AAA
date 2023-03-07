@@ -4,6 +4,7 @@
       "authLevel": "function",
       "type": "httpTrigger",
       "direction": "in",
+      "route": "Approve/{orchestrationId}",
       "name": "req",
       "methods": [
         "get",
@@ -14,6 +15,11 @@
       "type": "http",
       "direction": "out",
       "name": "res"
+    },
+    {
+      "name": "starter",
+      "type": "orchestrationClient",
+      "direction": "in"
     }
   ]
 }
