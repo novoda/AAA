@@ -6,7 +6,6 @@ const app = admin.initializeApp({
 });
 
 export default async function (context) {
-  console.log(context.bindings.name.regId)
   const message = {
     data: {
       stage: context.bindings.name.orderStatus

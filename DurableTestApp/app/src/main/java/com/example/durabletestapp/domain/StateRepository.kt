@@ -1,10 +1,6 @@
 package com.example.durabletestapp.domain
 
 import com.example.durabletestapp.presentation.ViewModel
-<<<<<<< HEAD
-import kotlinx.coroutines.flow.Flow
-=======
->>>>>>> origin/main
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
