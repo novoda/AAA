@@ -1,8 +1,8 @@
-const df = require("durable-functions");
+import { getClient } from "durable-functions";
 
 
-module.exports = async function (context, req) {
-    const client = df.getClient(context);
+export default async function (context, req) {
+    const client = getClient(context);
     await client.raiseEvent(req.params.orchestrationId, "Approval", true);
     context.res = {
         body: "Ok"

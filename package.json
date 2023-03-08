@@ -1,7 +1,9 @@
 {
   "name": "aaa",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple example on how to use Durable Function Orchestration with Push notification",
+  "type": "module",
+
   "scripts": {
     "start": "func start",
     "test": "echo \"No tests yet...\""

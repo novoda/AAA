@@ -2,7 +2,10 @@ package com.example.durabletestapp.data
 
 import retrofit2.Response
 import retrofit2.http.GET
+<<<<<<< HEAD
 import retrofit2.http.POST
+=======
+>>>>>>> origin/main
 import retrofit2.http.Path
 
 interface Api {

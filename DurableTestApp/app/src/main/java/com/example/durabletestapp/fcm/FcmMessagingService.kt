@@ -17,10 +17,10 @@ class FcmMessagingService : FirebaseMessagingService() {
     override fun onMessageReceived(message: RemoteMessage) {
         message.data["stage"]?.let {
             when (it) {
-                "last" -> {
+                "finished" -> {
                     stateRepository.setState(ViewModel.UiState.Final("This is the end of the line!"))
                 }
-                "waiting" -> {
+                "processing" -> {
                     stateRepository.setState(ViewModel.UiState.Ready(it, true))
                 }
                 else -> {
