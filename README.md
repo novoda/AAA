@@ -11,7 +11,11 @@ To run this tutorial:
 3. Make sure you have the latest version of the [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Clinux%2Ccsharp%2Cportal%2Cbash). 
 4. Install version 10.x or 12.x of Node.js installed.
 5. Android Studio and toolchain
-6. On Hello.index.js make sure replace service_account.json with the correct path to YOUR service account file
+6. Create a Firebase project
+7. Download the Service Account and point GOOGLE_APPLICATION_CREDENTIALS to that file
+8. Create DurableTestApp/app/google-services.json against the firebase project
+9. Start emulator
+10. Start Azure by running: `GOOGLE_APPLICATION_CREDENTIALS=<service.json> npm start`
 
 # For the Android App
 
