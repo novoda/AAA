@@ -5,6 +5,9 @@ const app = admin.initializeApp({
   credential: admin.credential.applicationDefault()
 });
 
+/**
+ * This represent some backend logic. For each task, push an update to the client. 
+ */
 export default async function (context) {
   const message = {
     data: {
