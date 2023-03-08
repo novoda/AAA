@@ -1,5 +1,8 @@
 ﻿import { getClient } from "durable-functions";
 
+/**
+ * Start the orchestration with the GCM Registration ID.
+ */
 export default async function (context, req) {
     const client = getClient(context);
     const regId = req.params.registrationId
