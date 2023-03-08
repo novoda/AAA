@@ -47,11 +47,9 @@ class ViewModel(
                    orchestrationId = it.body()?.id
                 }
                 stateRepository.setState(UiState.Ready("Initial stage"))
-                // viewStateSource.value = UiState.Ready
 
             }, onFailure = {
                 stateRepository.setState(UiState.Error(networkError = true))
-                // viewStateSource.value = UiState.Error(networkError = true)
             })
         }
     }
@@ -65,12 +63,12 @@ class ViewModel(
     }
 
     private suspend fun endFlow(orchestrationId: String) {
+        stateRepository.setState(UiState.Loading)
         kotlin.run { repository.finish(orchestrationId) }
     }
 
     fun startThings() {
         stateRepository.setState(UiState.Loading)
-        //viewStateSource.value = UiState.Loading
         viewModelScope.launch { getThings() }
     }
 
